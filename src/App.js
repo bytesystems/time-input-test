@@ -22,6 +22,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <RangeInput
+            inputClassName="form-control"
           onChange={(e) => console.log(e)}
         />
       </header>

@@ -3,7 +3,7 @@ import {useEffect, useState} from "react";
 
 export const RangeInput = (props) => {
 
-    const {className,inputClasses,onChange,errorMessageSameTime,errorMessageInvalidOrder} = props;
+    const {className,inputClassName,onChange,errorMessageSameTime,errorMessageInvalidOrder} = props;
 
     const [start,setStart] = useState(null)
     const [stop,setStop] = useState(null)
@@ -71,11 +71,11 @@ export const RangeInput = (props) => {
         <div className="range-input">
             <TimeInput
                 onChange={onStartChangeHandler}
-                className={`start${error ? " invalid":""}`}
+                className={`start ${inputClassName} ${error ? " invalid":""} `}
             />
             <TimeInput
                 onChange={onStopChangeHandler}
-                className={`stop${error ? " invalid":""}`}
+                className={`stop ${inputClassName} ${error ? " invalid":""}`}
             />
             {error && <div>{error}</div>}
             <div>{duration.text}</div>
